@@ -1,7 +1,5 @@
 # ChatSpace データベースの設計
-
 ## usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
@@ -12,9 +10,7 @@
 - has_many :posts
 - has_many :groups
 
-
 ## postsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
@@ -26,7 +22,6 @@
 - belongs_to :user
 - belongs_to :group
 
-
 ## posts_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -35,7 +30,6 @@
 ### Association
 - belongs_to post
 - belongs_to user
-
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -47,14 +41,11 @@
 - belongs_to user
 - has_many posts
 
-
 ## groups_usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-
 ### Association
 - belongs_to :group
 - belongs_to :user
