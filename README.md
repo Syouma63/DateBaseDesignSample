@@ -9,12 +9,12 @@
 ### Association
 - has_many :groups, through: :groups_users
 - has_many :groups_users
-- has_many :posts
+- has_many :messages
 
-## postsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|index: true, null: false, unique: true|
+|id|integer|index: true, null: false, primary_key: true|
 |image|string||
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
@@ -27,7 +27,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|index: true, null: false, unique: true|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :users, through: :groups_users
